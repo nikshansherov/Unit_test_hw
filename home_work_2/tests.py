@@ -19,17 +19,17 @@ class TestVehicle(unittest.TestCase):
         self.assertTrue(isinstance(self.vehicle, self.type_vehicle)), "не является экземпляром класса"
 
     def test_vehicle_num_wheels(self):
-        self.assertEqual(self.vehicle.num_wheels, self.vehicle_num_wheels), f"у автомобиля должно быть 4 колеса"
+        self.assertEqual(self.vehicle.num_wheels, self.vehicle_num_wheels), f"несоответствие количества колес"
 
     def test_vehicle_test_drive(self):
         self.assertEqual(self.vehicle.test_drive(),
-                         self.vehicle_speed_test_drive), f"у автомобиля скорость должна быть равна 60"
+                         self.vehicle_speed_test_drive), f"не соответствие скорости"
 
     def test_vehicle_park(self):
         self.vehicle.test_drive()
         self.vehicle.park()
         self.assertEqual(self.vehicle.speed,
-                         self.vehicle_speed_park), f"у автомобиля скорость парковке должна быть равна 0"
+                         self.vehicle_speed_park), f"скорость после парковки должна равняться 0"
 
 
 if __name__ == '__main__':
